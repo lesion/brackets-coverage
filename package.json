@@ -1,0 +1,15 @@
+{
+  "name": "coverage",
+  "title": "Coverage for Brackets",
+  "description": "",
+  "homepage": "https://github.com/lesion/brackets-coverage",
+  "version": "0.1.0",
+  "author": "Rocco De Patto <rocco.depatto@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lcov-parse": "0.0.9"
+  },
+  "engines": {
+    "brackets": ">=0.38.0"
+  }
+}
