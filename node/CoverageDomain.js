@@ -20,23 +20,37 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-/* global define, brackets */
+'use strict';
 
-define(function (require, exports, module) {
-
-  'use strict';
-
-  var AppInit = brackets.getModule('utils/AppInit'),
-    ExtensionUtils = brackets.getModule("utils/ExtensionUtils"),
-    Coverage = require('coverage'),
-    coverage;
+var lcov_parse = require('lcov-parse');
 
 
-    ExtensionUtils.loadStyleSheet(module, "coverage.css");
-    coverage = new Coverage();
-
-
-    AppInit.appReady(function(){
-      coverage.init();
+/**
+ * Initializes the coverage domain.
+ * @param {DomainManager} domainManager The DomainManager for the server
+ */
+function init(domainManager) {
+  if (!domainManager.hasDomain("CoverageDomain")) {
+    domainManager.registerDomain("CoverageDomain", {
+      major: 0,
+      minor: 1
     });
-});
+  }
+  domainManager.registerCommand(
+    "CoverageDomain", // domain name
+    "parse", // command name
+    lcov_parse, // command handler function
+    true, // this command is synchronous in Node
+    "Returns a json object representing an lcov", [{
+      name: "path", // parameters
+      type: "string",
+      description: "Path to lcov file"
+    }], [{
+      name: "lcov", // return values
+      type: "object",
+      description: "lcov object"
+    }]
+  );
+}
+
+exports.init = init;
