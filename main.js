@@ -32,11 +32,11 @@ define(function (require, exports, module) {
     coverage;
 
 
-    ExtensionUtils.loadStyleSheet(module, "coverage.css");
-    coverage = new Coverage();
+  ExtensionUtils.loadStyleSheet(module, "coverage.css");
+  coverage = new Coverage();
 
 
-    AppInit.appReady(function(){
-      coverage.init();
-    });
+  AppInit.appReady(function () {
+    coverage.init();
+  });
 });

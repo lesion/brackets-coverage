@@ -1,21 +1,17 @@
-
 .covered {
-  background-color: rgba(100,255,100,0.1);
+  background-color: rgba(100, 255, 100, 0.1);
 }
 
 .uncovered {
-  background-color: rgba(250,50,100,0.1);
+  background-color: rgba(250, 50, 100, 0.1);
 }
 
 #coverage_icon {
   color: #999;
   text-decoration: none;
-  text-weight: bold;
   font-family: Helvetica;
 }
 
-#coverage_icon.active{
+#coverage_icon.active {
   color: #8af;
 }
-
-
