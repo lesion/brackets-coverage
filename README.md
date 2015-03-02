@@ -8,7 +8,7 @@ The extension has to found a valid .lcov file inside the project (anywhere),
 so your karma.conf should be something like this:
 
 
-```
+```javascript
 module.exports = function (config) {
   config.set({
     basePath: '.',
@@ -37,5 +37,5 @@ module.exports = function (config) {
   });
 };
 ```
-
+`
 The preprocessors and the coverageReporter sections are the one you have to fill!
