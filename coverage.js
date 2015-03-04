@@ -40,6 +40,11 @@ define(function (require, exports, module) {
       .appendTo($('#main-toolbar .buttons'));
 
     ProjectManager.on('projectOpen', this._onProjectChange.bind(this));
+
+    // when starting Brackets, projectOpen is already called on AppInit
+    // so we call it manually
+    this._onProjectChange();
+
     EditorManager.on('activeEditorChange', this._onActiveEditorChange.bind(this));
 
     var MY_COMMAND_ID = "coverage.toggle";

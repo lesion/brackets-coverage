@@ -37,5 +37,4 @@ module.exports = function (config) {
   });
 };
 ```
-`
 The preprocessors and the coverageReporter sections are the one you have to fill!
